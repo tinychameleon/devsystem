@@ -1,0 +1,31 @@
+# Use better history search on arrow keys.
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+# Let me complete things without worrying about case.
+set completion-ignore-case on
+
+# Show me paginated completions, please.
+set page-completions on
+
+# Show me completions immediately when there are multiple matches.
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+
+# Be a little more intelligent about completions by looking forward.
+set skip-completed-text on
+
+# Make symlinks more visible.
+set mark-symlinked-directories on
+
+# Show extra file stats and colours
+set visible-stats on
+set colored-stats on
+
+# Don't allow 7-bit ASCII; stick to UTF-8.
+set input-meta on
+set output-meta on
+set convert-meta off
+
+# No bells please.
+set bell-style none
