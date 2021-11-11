@@ -1,0 +1,57 @@
+[user]
+	name = Stephan Tarulli
+	email = srt@tinychameleon.com
+	signingkey = 7724EA796EAA7C5B
+[alias]
+	a = add
+	ap = add --patch
+	an = add --intent-to-add
+	ai = add --interactive
+	bd = branch -d
+	bdd = branch -D
+	c = checkout
+	cb = checkout -b
+	d = diff
+	ds = diff --staged
+	f = fetch
+	fp = fetch --prune
+	k = commit
+	ka = commit --amend
+	kk = commit --all
+	kka = commit --all --amend -C HEAD
+	l = log --pretty=format:\"%C(auto)%h %<(50,trunc)%s %C(green)%ar %C(blue)%an%C(auto)%d\"
+	lg = log --graph --oneline --decorate
+	ll = log
+	p = push
+	pfff = push --force
+	pf = push --force-with-lease
+	pu = push -u origin HEAD
+	r = rebase
+	rc = rebase --continue
+	ri = rebase -i
+	s = status --short
+	st = status
+	u = pull
+	ur = pull --rebase
+	b = branch
+	bd = branch --delete
+[push]
+	default = upstream
+[branch]
+	autoSetupMerge = always
+[credential]
+	helper = osxkeychain
+[commit]
+	gpgsign = true
+[core]
+	editor = nvim
+[merge]
+	tool = nvim -d
+	prompt = false
+	conflictstyle = diff3
+[gpg]
+	program = /usr/local/bin/gpg
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
