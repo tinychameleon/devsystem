@@ -60,6 +60,7 @@ PACKAGES=(
 BREW=/usr/local/bin/brew
 STOW=/usr/local/bin/stow
 ZSH=/usr/local/bin/zsh
+RUSTUP=$HOME/.local/rust/cargo/bin/rustup
 
 if [[ ! -x "$BREW" ]]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -71,12 +72,14 @@ $BREW install $PACKAGES
 
 # Special installation for rustup. Hopefully this makes its way into
 # Homebrew w/o the Rust dependency at some point.
-(
-    export RUSTUP_HOME=$HOME/.local/rust/rustup
-    export CARGO_HOME=$HOME/.local/rust/cargo
-    curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf \
-	| sh -s -- -y --profile=default --default-toolchain stable
-)
+if [[ ! -x "$RUSTUP" ]]; then
+    (
+        export RUSTUP_HOME=$HOME/.local/rust/rustup
+        export CARGO_HOME=$HOME/.local/rust/cargo
+        curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf \
+            | sh -s -- -y --profile=default --default-toolchain stable
+    )
+fi
 
 if ! grep "$ZSH" /etc/shells >/dev/null; then
     echo "$ZSH" | sudo tee -a /etc/shells && sudo -k
