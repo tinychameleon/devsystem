@@ -87,3 +87,5 @@ if ! grep "$ZSH" /etc/shells >/dev/null; then
 fi
 
 $STOW --target $HOME --verbose 1 $STOW_PACKAGES
+
+launchctl load -w $HOME/.local/opt/gnu.emacs.daemon.plist
