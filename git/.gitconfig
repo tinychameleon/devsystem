@@ -44,10 +44,11 @@
 [commit]
 	gpgsign = true
 [core]
-	editor = nvim
+	editor = em-git
+[diff]
+	tool = em-diff
 [merge]
-	tool = nvim -d
-	prompt = false
+	prompt = true
 	conflictstyle = diff3
 [gpg]
 	program = /usr/local/bin/gpg
@@ -55,3 +56,5 @@
 	rebase = true
 [init]
 	defaultBranch = main
+[advice]
+	waitForEditor = false
