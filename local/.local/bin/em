@@ -1,0 +1,18 @@
+#!/bin/bash
+
+CLIENT_FLAGS="--socket-name main"
+
+# Special invocations use postfix names, like 'em-git'
+if [[ "$0" =~ /em$ ]]; then
+    CLIENT_FLAGS+=' --no-wait'
+fi
+
+no_emacs_frames_exist() {
+    [[ "$(emacsclient $CLIENT_FLAGS --eval '(> (length (frame-list)) 1)')" == "nil" ]]
+}
+
+if no_emacs_frames_exist; then
+    CLIENT_FLAGS+=' --create-frame'
+fi
+
+emacsclient $CLIENT_FLAGS $@
