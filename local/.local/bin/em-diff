@@ -1,1 +1,2 @@
-em
+#!/bin/bash
+em -c --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
