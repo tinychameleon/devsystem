@@ -19,6 +19,7 @@ TAPS=(
 )
 
 PACKAGES=(
+    # Tools
     aspell
     azure-cli
     bash
@@ -26,31 +27,40 @@ PACKAGES=(
     coreutils
     curl
     direnv
-    docker
     findutils
-    firefox
-    font-ibm-plex
+    fzf
     gawk
     gcc
     git
     gnu-sed
     gnu-tar
     gnupg
-    google-chrome
     grep
-    iterm2
     jq
     make
     mercurial
-    microsoft-edge
-    nvim
     pinentry-mac
     ripgrep
     stow
+    tmux
     tree
     vim
     watch
+    wordgrinder
     zsh
+
+    # Casks
+    homebrew/cask/docker
+    homebrew/cask/emacs
+    iterm2
+    firefox
+    google-chrome
+    microsoft-edge
+    microsoft-auto-update
+
+    # Fonts
+    font-fira-code-nerd-font
+    font-ibm-plex
 )
 
 ##
