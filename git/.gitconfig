@@ -45,11 +45,12 @@
 	gpgsign = true
 [core]
 	editor = em-git
+[mergetool "em-diff"]
+	cmd = em-diff
 [diff]
 	tool = em-diff
 [merge]
-	prompt = true
-	conflictstyle = diff3
+	tool = em-diff
 [gpg]
 	program = /usr/local/bin/gpg
 [pull]
@@ -58,3 +59,8 @@
 	defaultBranch = main
 [advice]
 	waitForEditor = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

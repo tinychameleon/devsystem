@@ -32,6 +32,7 @@ PACKAGES=(
     gawk
     gcc
     git
+    git-lfs
     gnu-sed
     gnu-tar
     gnupg
