@@ -40,7 +40,9 @@ PACKAGES=(
     jq
     make
     mercurial
+    nvm
     pinentry-mac
+    rbenv
     ripgrep
     stow
     tmux
