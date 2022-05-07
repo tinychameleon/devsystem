@@ -9,3 +9,9 @@ Run the [bootstrap.sh](./bootstrap.sh) script. This will do the following:
 - Install configuration using [GNU Stow](https://www.gnu.org/software/stow/).
 - Updates user shell.
 - Installs rustup via curl.
+
+## Pre-Flight Checklist
+- [ ] Backed up SSH keys
+- [ ] Backed up GPG keys
+- [ ] Backed up any private files
+- [ ] Pushed any in-flight branches
