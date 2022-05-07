@@ -112,7 +112,8 @@ fi
 ## Fetch repositories and install configuration
 ##
 
-mkdir $HOME/projects
+mkdir -p $HOME/projects
+
 (
     cd $HOME/projects
     for repo in ${REPOS[@]}; do
@@ -120,6 +121,9 @@ mkdir $HOME/projects
     done
 )
 
-$STOW --target $HOME --verbose 1 $STOW_PACKAGES
+(
+    cd $HOME/projects/devsystem
+    $STOW --target $HOME --verbose 1 $STOW_PACKAGES
+)
 
 launchctl load -w $HOME/.local/opt/gnu.emacs.daemon.plist
