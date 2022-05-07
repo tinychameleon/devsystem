@@ -1,6 +1,6 @@
 # Global Environment
-export EDITOR=nvim
-export VISUAL=nvim
+export EDITOR=em
+export VISUAL=em
 export GPG_TTY=$(tty)
 
 # Tool Paths
@@ -9,8 +9,9 @@ export CARGO_HOME=$HOME/.local/rust/cargo
 
 typeset -U path
 path=(
-	$HOME/go/bin
+	/Applications/Emacs.app/Contents/MacOS/bin
 	$HOME/.local/bin
+	$HOME/go/bin
 	$CARGO_HOME/bin
 	/usr/local/opt/binutils/bin
 	/usr/local/opt/coreutils/libexec/gnubin
