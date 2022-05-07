@@ -3,8 +3,8 @@ alias e=$EDITOR
 alias ls='ls --color -AFh'
 
 # Prompt
-PROMPT='%F{green}%(4~.%-1~/…/%2~.%~)%f› '
-RPROMPT='%(?..%(146?..❗️%F{red}%?%f))%(1j. 🔧%F{yellow}%j%f.)'
+PROMPT='%F{5}%(4~.%-1~/…/%2~.%~)%f› '
+RPROMPT='%(?..%(146?..❗️%F{1}%?%f))%(1j. 🔧 %F{3}%j%f.)'
 
 # Tool hooks
 eval "$(direnv hook zsh)"
@@ -26,8 +26,6 @@ unsetopt beep
 setopt share_history
 
 # Configuration Commands
-bindkey -v
-
 zstyle :compinstall filename '/Users/srt/.zshrc'
 
 autoload -Uz compinit; compinit
