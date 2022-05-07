@@ -64,6 +64,12 @@ PACKAGES=(
     font-ibm-plex
 )
 
+REPOS=(
+    tinychameleon/devsystem.git
+    tinychameleon/tinychameleon.com.git
+    mbadolato/iTerm2-Color-Schemes.git
+)
+
 ##
 ## Bootstrap Process
 ##
@@ -72,6 +78,11 @@ BREW=/usr/local/bin/brew
 STOW=/usr/local/bin/stow
 ZSH=/usr/local/bin/zsh
 RUSTUP=$HOME/.local/rust/cargo/bin/rustup
+
+if [[ ! -d "$HOME/.ssh" ]]; then
+    echo "Copy over SSH configuration before bootstrapping."
+    exit 1
+fi
 
 if [[ ! -x "$BREW" ]]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -96,6 +107,18 @@ if ! grep "$ZSH" /etc/shells >/dev/null; then
     echo "$ZSH" | sudo tee -a /etc/shells && sudo -k
     chsh -s "$ZSH" >/dev/null 2>&1
 fi
+
+##
+## Fetch repositories and install configuration
+##
+
+mkdir $HOME/projects
+(
+    cd $HOME/projects
+    for repo in ${REPOS[@]}; do
+        git clone git@github.com:${repo}
+    done
+)
 
 $STOW --target $HOME --verbose 1 $STOW_PACKAGES
 
